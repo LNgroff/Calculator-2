@@ -14,33 +14,43 @@ from arithmetic import (add, subtract, multiply, divide, square, cube,
  #   if len(tokens) > 3:
  #       num3 = float(tokens[3])
 
-#    result = None   
-
+  
 
 def calculator():
     operator = tokens[0]
     num1 = float(tokens[1])
     num2 = float(tokens[2])
-    if operator == '+':
-        return add(num1, num2)
-    
-    elif operator == '-':
-        return subtract(num1, num2)
 
-    elif operator == '*':
-        return multiply(num1, num2)
-   
-    elif operator == '/':
-        return divide(num1, num2)
-   
-    elif operator == '**':
-        return square(num1)
-    
-    elif operator == '**':
-        return square(num1)
+    try:
+        if operator == '+':
+            result = add(num1, num2)
+        
+        elif operator == '-':
+            result = subtract(num1, num2)
 
-    elif operator == '**':
-        return square(num1)     
+        elif operator == '*':
+            result = multiply(num1, num2)
+    
+        elif operator == '/':
+            result = divide(num1, num2)
+    
+        elif operator == '**':
+            result = square(num1)
+        
+        elif operator == 'pow':
+            result = power(num1, num2)    
+        
+        elif operator == 'mod':
+            result = mod(num1,num2)
+
+    except IndexError:    
+        
+        if operator == '**':
+            result = square(num1)
+
+        elif operator == 'cube':
+            result = cube(num1)
+    return result
 
 while True:
     #until 'q' is entered
