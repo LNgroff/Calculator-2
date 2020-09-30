@@ -17,34 +17,34 @@ while True:
         print("Error, not enough inputs.")
         continue
 
-    operator = token[0]
-    num1 = token[1]
+    operator = tokens[0]
+    num1 = float(tokens[1])
     
     if len(tokens) < 3:
         num2 = "0"
 
     else:
-        num2 =token[2]    
+        num2 =float(tokens[2])    
 
     if len(tokens) > 3:
-        num3 = token[3]
+        num3 = float(tokens[3])
 
-     result = None   
+    result = None   
 
     if operator == '+':
-        result = add(num1, num2)
+        return add(num1, num2)
     
     if operator == '-':
-        result = subtract(num1, num2)
-   
+        return  subtract(num1, num2)
+
     if operator == '*':
-        result = multiply(num1, num2)
+        return multiply(num1, num2)
    
     if operator == '/':
-        result =  divide(num1, num2)
+        return divide(num1, num2)
    
     if operator == '**':
-        result = square(num1)
+        return square(num1)
     
         
 
