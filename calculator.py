@@ -10,31 +10,31 @@ while True:
     user_input = input("Enter your equation > ")
     token = user_input.split(' ')
 
-    elif len(token) < 2:
+    if len(token) < 2:
         print("Error, please enter math type and two numbers")
         continue
 
-    if user_input = 'q':
+    if user_input == 'q':
         break
 
     operator = token[0]
-    num1 = token[1]
-    num2 = token[2]
+    num1 = int(token[1])
+    num2 = int(token[2])
 
-    if operator == '+':
-        return num1 + num2
+    elif operator == '+':
+         num1 + num2
     
-    if operator == '-':
-        return num1 - num2
+    elif operator == '-':
+        print(num1 - num2)
    
-    if operator == '*':
-        return num1 * num2 
+    elif operator == '*':
+        print(num1 * num2) 
    
-    if operator == '/':
-        return num1 / num2 
+    elif operator == '/':
+        print(num1 / num2)
    
-    if operator == '**':
-        return num1**2
+    elif operator == '**':
+        print(num1**2)
     
         
 
