@@ -8,33 +8,43 @@ from arithmetic import (add, subtract, multiply, divide, square, cube,
 while True:
     #until 'q' is entered
     user_input = input("Enter your equation > ")
-    token = user_input.split(' ')
-
-    if len(token) < 2:
-        print("Error, please enter math type and two numbers")
-        continue
-
+    tokens = user_input.split(' ')
+    
     if user_input == 'q':
         break
+    
+    elif len(tokens) < 2:
+        print("Error, not enough inputs.")
+        continue
 
     operator = token[0]
-    num1 = int(token[1])
-    num2 = int(token[2])
-
-    elif operator == '+':
-         num1 + num2
+    num1 = token[1]
     
-    elif operator == '-':
-        print(num1 - num2)
+    if len(tokens) < 3:
+        num2 = "0"
+
+    else:
+        num2 =token[2]    
+
+    if len(tokens) > 3:
+        num3 = token[3]
+
+     result = None   
+
+    if operator == '+':
+        result = add(num1, num2)
+    
+    if operator == '-':
+        result = subtract(num1, num2)
    
-    elif operator == '*':
-        print(num1 * num2) 
+    if operator == '*':
+        result = multiply(num1, num2)
    
-    elif operator == '/':
-        print(num1 / num2)
+    if operator == '/':
+        result =  divide(num1, num2)
    
-    elif operator == '**':
-        print(num1**2)
+    if operator == '**':
+        result = square(num1)
     
         
 
